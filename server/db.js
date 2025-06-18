@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const connectionString = process.env.NODE_ENV
-  ? process.env.MONGO_SERVERLESS_PROD
-  : process.env.MONGO_DEV;
+const connectionString = process.env.MONGO_SERVERLESS_PROD;
 
 const getConnection = async function () {
   return new MongoClient(connectionString, {
